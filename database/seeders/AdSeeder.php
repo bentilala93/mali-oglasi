@@ -14,7 +14,7 @@ class AdSeeder extends Seeder
      */
     public function run(): void
     {
-        $users = User::all();
+        $users = User::role('customer')->get();
         $categories = Category::all();
 
         if ($users->isEmpty() || $categories->isEmpty()) {
